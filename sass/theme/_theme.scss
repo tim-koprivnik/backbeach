@@ -10,13 +10,17 @@ a {
     text-decoration: none;
 }
 
+p {
+    font-weight: 500;
+}
+
 h1 {
     font-size: 100px;
     @media (max-width: $xl) {
         font-size: 90px;
     }
     @media (max-width: $lg) {
-        font-size: 72px;
+        font-size: 70px;
     }
     @media (max-width: $md) {
         font-size: 48px;
@@ -28,15 +32,18 @@ h1 {
 }
 
 h2 {
-    font-size: 72px;
+    font-size: 70px;
     @media (max-width: $xl) {
         font-size: 60px;
     }
     @media (max-width: $lg) {
         font-size: 36px;
     }
-    @media (max-width: $sm) {
+    @media (max-width: $md) {
         font-size: 30px;
+    }
+    @media (max-width: $sm) {
+        font-size: 24px;
     }
 }
 
@@ -383,7 +390,7 @@ h2 {
             font-size: 90px;
         }
         @media (max-width: $lg) {
-            font-size: 72px;
+            font-size: 70px;
         }
         @media (max-width: $md) {
             font-size: 48px;
@@ -505,7 +512,7 @@ h2 {
     }
 }
 
-.home-welcome, .home-about {
+.home-welcome, .home-about, .home-subscribe, .home-social, .home-contact {
     margin-top: 120px;
     margin-bottom: 120px;
     overflow: hidden;
@@ -527,10 +534,9 @@ h2 {
         }
         h2 {
             font-family: 'Fredericka the Great', cursive;
-            font-size: 72px;
+            font-size: 70px;
             color: $primary;
             line-height: 1;
-            // transform: translate(140px, 30px);  
             @media (max-width: $xl) {
                 font-size: 60px;
             }
@@ -538,7 +544,7 @@ h2 {
                 font-size: 36px;
             }
             @media (max-width: $sm) {
-                font-size: 30px;
+                font-size: 24px;
             }
             span {
                 font-family: 'Pacifico', cursive;
@@ -638,7 +644,280 @@ h2 {
         .button {
             background-color: $secondary;
             &:hover {
-                background-color: darken($secondary, 15%);
+                background-color: $secondary-300;
+            }
+        }
+    }
+    &.home-subscribe {
+        background: $primary;
+        position: relative;
+        padding-top: 75px;
+        padding-bottom: 150px;
+        border-top: 1px dashed white;
+        border-bottom: 1px dashed white;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-image: url('../img/subscribe-bg.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+        }
+        @media (max-width: $lg) {
+            padding-top: 50px;
+            padding-bottom: 100px;
+        }
+        @media (max-width: $md) {
+            padding-top: 25px;
+            padding-bottom: 50px;
+        }
+        @media (max-width: $sm) {
+            padding-top: 25px;
+            padding-bottom: 50px;
+        }
+        margin-top: 0;
+        .title-holder {
+            border-bottom: 1px solid rgba($primary-300, 0.5);
+            position: relative;
+            h2 {
+                color: white;
+                position: relative;
+                span {
+                    color: $primary-300;
+                }
+            }
+        }
+        .subscribe-form {
+            .wpcf7-form-control {
+                @media (max-width: $xl) {
+                    margin-bottom: 1em;
+                    font-size: 24px;
+                }
+                @media (max-width: $lg) {
+                    font-size: 18px;
+                }
+            }
+            input {
+                border: 1px dashed $primary-300;
+                // border-radius: 1px;
+                width: 100%;
+                padding: 0.5em 1em;
+                color: black;
+                background-color: white;
+                font-size: 24px;
+                height: auto;
+                min-height: auto;
+                line-height: initial;
+                &[type=submit] {
+                    background: $secondary;
+                    color: white;
+                    border: 1px dashed white;
+                    font-family: 'Fredericka the Great', cursive;
+                    &:hover {
+                        background: $secondary-300;
+                    }
+                }
+            }
+        }
+    }
+    &.home-social {
+        .instagram-holder {
+            margin-top: 50px;
+            .title {
+                font-family: 'Fredericka the Great', cursive;
+                font-size: 60px;
+                margin-bottom: 60px;
+                color: $primary;
+                @media (max-width: $xl) {
+                    font-size: 48px;
+                    margin-bottom: 45px;
+                }
+                .fa {
+                    color: $secondary;
+                    margin-right: 0.5em;
+                }
+            }
+        }
+        .facebook-holder {
+            border: 1px dashed $secondary;
+            padding: 60px;
+            font-family: 'Fredericka the Great', cursive;
+            height: 600px;
+            border-radius: 15px;
+            @media (max-width: $md) {
+                padding: 30px;
+                height: 860px;
+            }
+            .title {
+                font-size: 60px;
+                margin-bottom: 60px;
+                color: $secondary;
+                @media (max-width: $xl) {
+                    font-size: 48px;
+                    margin-bottom: 45px;
+                }
+                @media (max-width: $lg) {
+                    font-size: 36px;
+                    margin-bottom: 30px;
+                }
+                @media (max-width: $md) {
+                    font-size: 24px;
+                    margin-bottom: 15px;
+                }
+                .fa {
+                    color: $primary;
+                    margin-right: 0.5em;
+                }
+            }
+            img {
+                width: 100%;
+                @media (max-width: $md) {
+                    margin-bottom: 20px;
+                }
+            }
+            .content {
+                font-family: 'Source Sans Pro', sans-serif;
+                .meta-data {
+                    display: flex;
+                    justify-content: space-between;
+                    border-bottom: 1px dashed $primary-300;
+                    padding-bottom: 20px;
+                    margin-bottom: 20px;
+                    .date, .likes {
+                        @media (max-width: $lg) {
+                            flex: 1;
+                        }
+                        i {
+                            color: $primary-300;
+                            font-size: 1.5em;
+                            // margin-right: 0.25em;
+                        }
+                        &.likes {
+                            margin-right: 80px;
+                            @media (max-width: $xl) {
+                                margin-right: 30px;
+                            }
+                            @media (max-width: $lg) {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+                a {
+                    text-decoration: none;
+                }
+                p {
+                    font-weight: 500;
+                    margin-bottom: 40px;
+                }
+                .button {
+                    background-color: $secondary;
+                    &:hover {
+                        background-color: $secondary-300;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    &.home-contact {
+        padding-top: 75px;
+        padding-bottom: 75px;
+        margin-top: 0;
+        margin-bottom: 0;
+        @media (max-width: $lg) {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        @media (max-width: $md) {
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        @media (max-width: $sm) {
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        position: relative;
+        .bg-image {
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-image: url('../img/news-bg.png');
+            opacity: 1;
+            // &::before {
+            //     content: '';
+            //     height: 200px;
+            //     bottom: 0;
+            //     left: 0;
+            //     right: 0;
+            //     display: block;
+            //     position: absolute;
+            //     background: white;
+            // }
+            // &::after {
+            //     content: '';
+            //     height: 200px;
+            //     bottom: 200px;
+            //     left: 0;
+            //     right: 0;
+            //     display: block;
+            //     position: absolute;
+            //     background: linear-gradient(to bottom, transparent, white);
+            // }
+        }
+        .title-holder {
+            h2 {
+                position: relative;
+            }
+        }
+        .contact-form {
+            input, textarea {
+                border: 1px dashed $primary-300;
+                width: 100%;
+                padding: 0.5em 1em;
+                color: black;
+                background-color: white;
+                font-size: 24px;
+                height: auto;
+                min-height: auto;
+                line-height: initial;
+                &[type=submit] {
+                    background: $secondary;
+                    color: white;
+                    border: 1px dashed white;
+                    font-family: 'Fredericka the Great', cursive;
+                    &:hover {
+                        background: $secondary-300;
+                    }
+                }
+            }
+            .wpcf7-form-control, .wpcf7-textarea {
+                @media (max-width: $xl) {
+                    font-size: 24px;
+                }
+                @media (max-width: $lg) {
+                    font-size: 18px;
+                }
+            }
+            .wpcf7-email {
+                @media (max-width: $xl) {
+                    margin-bottom: 1em;
+                }
+            }
+        }
+        .copyright {
+            margin-top: 45px;
+            font-size: 14px;
+            a {
+                text-decoration: none;
+                font-weight: bold;
             }
         }
     }
@@ -663,7 +942,7 @@ h2 {
         left: 0;
         right: 0;
         background-image: url('../img/news-bg.png');
-        opacity: 0.5;
+        opacity: 0.5; // 1
         &::before {
             content: '';
             height: 200px;
@@ -792,10 +1071,6 @@ h2 {
     p {
         line-height: 1.5;
         font-weight: 300;
-        @media (max-width: $sm) {
-            // text-align:center;
-            // position: relative;
-        }
     }
     .button {
         margin-top: 30px;
@@ -843,15 +1118,15 @@ h2 {
     }
     h2 {
         font-family: 'Fredericka the Great', cursive;
-        font-size: 72px;
+        font-size: 70px;
         @media (max-width: $xl) {
             font-size: 60px;
         }
         @media (max-width: $lg) {
             font-size: 36px;
         }
-        @media (max-width: $md) {
-            font-size: 30px;
+        @media (max-width: $sm) {
+            font-size: 24px;
         }
     }
     .testimonial-holder {
@@ -885,6 +1160,37 @@ h2 {
             }
         }
     }
+}
+
+.footer-warning {
+    background-color: $primary;
+    color: white;
+    font-size: 14px;
+    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
+    img {
+        margin-top: 20px;
+        @media (max-width: $md) {
+            margin-top: 30px;
+        }
+        @media (max-width: $sm) {
+            margin-top: 0px;
+        }
+    }
+    .tagline {
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    p {
+        font-weight: 300;
+        margin-top: -12px;
+    }
+}
+
+.wrapper {
+    padding: 0; // default: 30px 0;
 }
 
 
