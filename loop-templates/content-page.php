@@ -11,13 +11,13 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+	<!-- <header class="entry-header">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php // the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-	</header><!-- .entry-header -->
+	</header> -->
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+	<?php // echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
 	<div class="entry-content">
 
@@ -34,10 +34,10 @@ defined( 'ABSPATH' ) || exit;
 
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<!-- <footer class="entry-footer"> -->
 
-		<?php edit_post_link( __( 'Edit', 'understrap' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php // edit_post_link( __( 'Edit', 'understrap' ), '<span class="edit-link">', '</span>' ); ?>
 
-	</footer><!-- .entry-footer -->
+	<!-- </footer> -->
 
 </article><!-- #post-## -->

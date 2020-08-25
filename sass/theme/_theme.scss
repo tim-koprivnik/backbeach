@@ -1,4 +1,6 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+
+// BASIC
 body {
     // font-family: 'Fredericka the Great', cursive;
     font-family: 'Source Sans Pro', sans-serif;
@@ -12,39 +14,6 @@ a {
 
 p {
     font-weight: 500;
-}
-
-h1 {
-    font-size: 100px;
-    @media (max-width: $xl) {
-        font-size: 90px;
-    }
-    @media (max-width: $lg) {
-        font-size: 70px;
-    }
-    @media (max-width: $md) {
-        font-size: 48px;
-    }
-    @media (max-width: $sm) {
-        font-size: 36px;
-        margin-bottom: 0px;
-    }
-}
-
-h2 {
-    font-size: 70px;
-    @media (max-width: $xl) {
-        font-size: 60px;
-    }
-    @media (max-width: $lg) {
-        font-size: 36px;
-    }
-    @media (max-width: $md) {
-        font-size: 30px;
-    }
-    @media (max-width: $sm) {
-        font-size: 24px;
-    }
 }
 
 .button {
@@ -121,10 +90,7 @@ h2 {
 #wrapper-navbar {
     position: relative;
     z-index: 2000;
-    margin-bottom: -360px; // *** //
-    @media (max-width: $lg) {
-        margin-bottom: 0;
-    }
+    margin-bottom: 0px; // *** //
     .top-header-holder {
         height: 260px;
         padding-top: 50px;
@@ -316,6 +282,16 @@ h2 {
                     }
                 }
             } 
+        }
+    }
+}
+
+// HOME PAGE 
+.home {
+    #wrapper-navbar {
+        margin-bottom: -360px; // *** //
+        @media (max-width: $lg) {
+            margin-bottom: 0;
         }
     }
 }
@@ -699,6 +675,7 @@ h2 {
                     font-size: 24px;
                 }
                 @media (max-width: $lg) {
+                    // margin-bottom: 0.25em;
                     font-size: 18px;
                 }
             }
@@ -828,7 +805,7 @@ h2 {
     &.home-contact {
         padding-top: 75px;
         padding-bottom: 75px;
-        margin-top: 0;
+        margin-top: 75px;
         margin-bottom: 0;
         @media (max-width: $lg) {
             padding-top: 50px;
@@ -1192,6 +1169,204 @@ h2 {
 .wrapper {
     padding: 0; // default: 30px 0;
 }
+
+// PAGES
+.page-header {
+    border-bottom: 1px solid rgba($primary-300, 0.5);
+    // margin-bottom: 50px;
+    h1 {
+        padding-top: 1em;
+        padding-bottom: 0.25em;
+        font-size: 100px;
+        font-family: 'Fredericka the Great', cursive;
+        color: $secondary;
+        @media (max-width: $xl) {
+            font-size: 72px;
+        }
+        @media (max-width: $lg) {
+            font-size: 48px;
+        }
+        @media (max-width: $md) {
+            font-size: 36px;
+        }
+        @media (max-width: $sm) {
+            font-size: 28px;
+        }
+    }  
+}
+
+.entry-content {
+    font-size: 24px;
+        @media (max-width: $lg) {
+            font-size: 18px;
+        }
+    h2 {
+        font-size: 36px;
+        font-weight: 800;
+        color: $primary-300;
+        margin-bottom: 1em;
+        margin-top: 1em;
+        @media (max-width: $md) {
+            font-size: 30px;
+        }
+        @media (max-width: $sm) {
+            font-size: 24px;
+        }
+    }
+    ul {
+        list-style: none;
+        li {
+            margin-bottom: 0.5em;
+            display: inline-block;
+            margin-right: 0.75em;
+            &::before {
+                content: '';
+                display: inline-block;
+                height: 0.5em;
+                width: 0.5em;
+                border-radius: 50%;
+                margin-right: 0.25em;
+                background: $secondary;
+            }
+        }
+    }
+    img {
+        border-radius: 30px;
+        border: 1px dashed white;
+    }
+    .img-widescreen {
+        margin: 50px 0;
+        margin-left: -100px;
+        margin-right: -100px;
+        @media (max-width: $lg) {
+            margin: 30px 0;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    }
+    a {
+        color: $secondary;
+        text-decoration: none;
+        font-weight: 600;
+        &:hover {
+            color: $secondary-300;
+        }
+    }
+    .space {
+        margin-bottom: 50px;
+    }
+}
+
+.contact-us-holder {
+    font-size: 24px;
+    // margin-bottom: 50px;
+    @media (max-width: $lg) {
+        font-size: 18px;
+    }
+    .wpcf7 {  
+        input, textarea {
+            font-size: 18px;
+            margin-top: 10px;
+            border: 1px dashed $primary-300;
+            width: 100%;
+            padding: 0.5em 1em;
+            color: black;
+            background-color: white;
+            font-size: 24px;
+            height: auto;
+            min-height: auto;
+            line-height: initial;
+            &[type=submit] {
+                background: $secondary;
+                color: white;
+                border: 1px dashed white;
+                font-family: 'Fredericka the Great', cursive;
+                display: inline-block;
+                width: auto;
+                border-radius: 15px;
+                font-size: 24px;
+                @media (max-width: $lg) {
+                    font-size: 18px;
+                }
+                &:hover {
+                    background: $secondary-300;
+                }
+            }
+        }
+    }
+    padding-top: 60px;
+    margin-top: 60px;
+    border-top: 1px solid rgba($primary-300, 0.5);
+    .contact-us-hours {
+        background: $secondary;
+        color: white;
+        border-radius: 15px;
+        border: 1px dashed white;
+        .hours {
+            display: flex;
+            justify-content: space-between;
+            .hour {
+                // flex: 1;
+                font-size: 24px;
+                font-weight: 300;
+                line-height: 1.5;
+                @media (max-width: $md) {
+                    font-size: 18px;
+                }
+                span, strong {
+                    display: block;
+                }
+                strong {
+                    font-size: 16px;
+                }
+            }
+        }
+        .content {
+            padding: 45px;
+            padding-top: 30px;
+            &.line-bottom {
+                border-bottom: 1px solid white;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+            h3 {
+                font-size: 36px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.contact-us-contact-info {
+    margin-top: 100px;
+    @media (max-width: $xl) {
+        margin-top: 50px;
+    }
+    @media (max-width: $lg) {
+        margin-top: 25px;
+    }
+    a {
+        color: black;
+        font-weight: 400;
+        // font-size: 18px;
+    }
+    .fa {
+        color: $secondary;
+        margin-right: 0.5em;
+    }
+}
+
+.contact-us-image {
+    img {
+        width: 100%;
+    }
+}
+
+// POSTS
+#single-wrapper {
+    margin-top: 50px;
+}
+
 
 
 
