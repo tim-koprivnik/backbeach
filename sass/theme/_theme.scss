@@ -901,6 +901,7 @@ p {
 }
 
 .home-news {
+    overflow: hidden; // <?php the_excerpt(); ?> PROBLEM
     padding-top: 200px;
     padding-bottom: 200px;
     @media (max-width: $lg) {
@@ -1365,6 +1366,11 @@ p {
 // POSTS
 #single-wrapper {
     margin-top: 50px;
+}
+
+.understrap-read-more-link {
+    display: hidden;
+    opacity: 0;
 }
 
 

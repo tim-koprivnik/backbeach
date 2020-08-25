@@ -75,30 +75,47 @@ get_header();
     </div>
 </div>
 
+<?php
+// Look Wordpress Posts
+$loop = new WP_Query( array(
+    'post_type' => 'post',
+    'posts_per_page' => 1,
+    'order' => 'DESC',
+    'category_name' => "What's On",
+));
+
+while ( $loop->have_posts() ) : $loop->the_post();
+?>
+
 <div class="home-news">
     <div class="bg-image"></div>
     <div class="container">
         <div class="row align-items-center">
             <div class="col-sm-5 col-xs-12">
                 <a href="#" class="news-img wow zoomIn">
-                    <div class="image"></div>
-                    <div class="category">What's On</div>
-                    <div class="date">10.06.2020</div>
+                    <div class="image" <?php if ( has_post_thumbnail() ) { ?> style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);" <?php } ?>></div>
+                    <div class="category"><?php echo get_the_category()[0]->cat_name; ?></div>
+                    <div class="date"><?php the_date('d.m.Y'); ?></div>
                 </a>
             </div>
             <div class="col-sm-1"></div>
             <div class="col-sm-6 col-xs-12">
-                <h2 class="wow fadeInUp">Mother's Day</h2>
+                <h2 class="wow fadeInUp"><?php the_title(); ?></h2>
                 <p class="wow fadeInUp">
-                    Join us to celebrate your Mother's Day. Breakfast and Lunch are pretty full but we're taking Dinner bookings so you ...
+                    <?php the_excerpt(); ?>
                 </p>
-                <a href="#" class="btn btn-primary button wow fadeInRight">
+                <a href="<?php the_permalink(); ?>" class="btn btn-primary button wow fadeInRight">
                     Read More <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
         </div>
     </div>
 </div>
+
+<?php
+endwhile; wp_reset_query();
+?>
+
 
 <div class="home-about">
     <div class="bg-image">
