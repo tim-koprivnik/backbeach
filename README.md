@@ -1,1 +1,2 @@
-# Custom WordPress theme
+# Backbeach
+WordPress theme
