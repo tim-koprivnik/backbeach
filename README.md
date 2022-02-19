@@ -1,2 +1,2 @@
-# Backbeach
+# backbeach
 WordPress theme
