@@ -1,2 +1,3 @@
 # backbeach
-WordPress theme
+
+WordPress theme.
